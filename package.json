@@ -2,7 +2,7 @@
   "name": "pouch-db-exemple-tdc",
   "version": "0.0.2",
   "description": "angular-pouchdb-chat",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "add-cors": "./node_modules/.bin/add-cors-to-couchdb http://localhost:3000/",

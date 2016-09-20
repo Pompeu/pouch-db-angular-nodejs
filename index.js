@@ -7,7 +7,8 @@ const express = require('express'),
 app.use(express.static('public'));
 
 app.use('/db', require('express-pouchdb')(PouchDB));
-app.use('*', (res, res) => {
+
+app.use('*', (req, res) => {
   res.json({err: 'not fount'});
 });
 
