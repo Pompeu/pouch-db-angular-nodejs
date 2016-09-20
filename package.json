@@ -1,0 +1,36 @@
+{
+  "name": "pouch-db-exemple-tdc",
+  "version": "0.0.2",
+  "description": "angular-pouchdb-chat",
+  "main": "app.js",
+  "scripts": {
+    "start": "node index.js",
+    "add-cors": "./node_modules/.bin/add-cors-to-couchdb http://localhost:3000/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pompeu/pouch-db-exemple-tdc.git"
+  },
+  "keywords": [
+    "angular",
+    "pouchdb",
+    "chat"
+  ],
+  "author": "Itacir Ferreia Pompeu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Pompeu/pouch-db-exemple-tdc/issues"
+  },
+  "homepage": "https://github.com/Pompeu/pouch-db-exemple-tdc#readme",
+  "devDependencies": {
+    "angular-material": "^1.1.1",
+    "live-server": "^1.1.0"
+  },
+  "dependencies": {
+    "add-cors-to-couchdb": "0.0.6",
+    "express": "^4.14.0",
+    "express-pouchdb": "^2.0.0",
+    "pouchdb": "^6.0.5"
+  }
+}

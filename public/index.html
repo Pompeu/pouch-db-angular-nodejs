@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CouchDB</title>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css"> 
+    <style type="text/css" media="screen">
+          .virtualRepeatdemoInfiniteScroll #vertical-container {
+            height: 300px;
+            width: 99%;
+          }
+
+          .virtualRepeatdemoInfiniteScroll .repeated-item {
+            border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
+            height: 64px;
+            padding-top: 10px;
+          }
+
+          .virtualRepeatdemoInfiniteScroll md-content {
+            margin: 16px;
+          }
+
+          .virtualRepeatdemoInfiniteScroll md-virtual-repeat-container {
+            border: solid 1px grey;
+          }
+
+          .virtualRepeatdemoInfiniteScroll .md-virtual-repeat-container .md-virtual-repeat-offsetter {
+            padding-left: 16px;
+          }
+    </style>
+  </head>
+  <body data-ng-app='app'>
+    <ui-view>
+    </ui-view>
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/pouchdb/dist/pouchdb.min.js"></script>
+    <script src="bower_components/ui-router.js"></script>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <script src="scripts/app.js"></script>
+    <script src='scripts/factorys/pouchdb.js'></script>
+    <script src='scripts/controllers/chat.js'></script>
+  </body>
+</html>

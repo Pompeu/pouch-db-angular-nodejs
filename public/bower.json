@@ -1,0 +1,28 @@
+{
+  "name": "angular-pouchdb",
+  "description": "",
+  "main": "app.js",
+  "moduleType": [
+    "es6"
+  ],
+  "keywords": [
+    "pouchdb",
+    "angular"
+  ],
+  "authors": [
+    "itacir ferreira pompeu"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "pouchdb": "^5.2.1",
+    "angular-material": "^1.1.1"
+  }
+}
