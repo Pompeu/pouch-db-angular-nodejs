@@ -2,3 +2,6 @@ node_modules
 pouch__all*
 _users
 _replicator
+index
+persons
+chat
