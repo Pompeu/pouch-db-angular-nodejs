@@ -12,4 +12,5 @@ app.use('*', (req, res) => {
   res.json({err: 'not fount'});
 });
 
-app.listen(process.env.NODE_ENV || 3000);
+app.listen(process.env.PORT|| 3000);
+
