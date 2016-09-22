@@ -29,6 +29,7 @@
   },
   "dependencies": {
     "add-cors-to-couchdb": "0.0.6",
+    "body-parser": "^1.15.2",
     "express": "^4.14.0",
     "express-pouchdb": "^2.0.0",
     "pouchdb": "^6.0.5"

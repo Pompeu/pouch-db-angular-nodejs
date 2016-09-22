@@ -15,6 +15,14 @@
       const baseUrl = $window.location.origin;
       const remote = `${baseUrl}/db/chat-ruby-conf`;
 
+      const remotexDb = new PouchDB(remote, {
+        ajax: {
+          headers: {
+            'X-Acting-Profile': 'pompeulimp',
+            'Authorization':    'Bearer json_web_token'
+          }
+        }
+      });
 
       const syncOptions = {
         live:  true,
@@ -26,7 +34,7 @@
       db.getDB()
         .then(localDB => {
           return localDB
-            .sync(remote, syncOptions)
+            .sync(remotexDb, syncOptions)
             .on('change', () => $rootScope.$broadcast('chat-sync')); 
         });
 
