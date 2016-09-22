@@ -9,7 +9,7 @@
 
   function pouchdb($rootScope, $q) {
 
-    const db = new PouchDB('chat');
+    const db = new PouchDB('chat-ruby-conf');
 
     this.getDB = getDB
     this.getDBSync = getDBSync

@@ -13,7 +13,7 @@
     .run(function (db, $rootScope, $window) {
 
       const baseUrl = $window.location.origin;
-      const remote = `${baseUrl}/db/chat`;
+      const remote = `${baseUrl}/db/chat-ruby-conf`;
 
 
       const syncOptions = {

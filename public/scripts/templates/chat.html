@@ -1,16 +1,18 @@
-<div>
-  <md-content class="virtualRepeatdemoInfiniteScroll" ng-cloak layout="column">
-    <md-virtual-repeat-container id="vertical-container" flex>
-      <div md-virtual-repeat="item in cc.messages" class="repeated-item" flex>
-        {{item.sender}} Say : {{item.text}} at {{item.timestamp}}
-      </div>
-    </md-virtual-repeat-container>
-  </md-content>
-  <div class="md-padding" layout-padding>
+<div> 
+  <div ng-show="!(cc.name.length > 4)" class="md-padding" layout-padding>
     <md-input-container class="md-icon-float md-block">
       <label>Say your name</label>
       <input type="text" data-ng-model='cc.name'>
     </md-input-container>
+  </div>
+  <md-content class="virtualRepeatdemoInfiniteScroll" layout="row" layout-align="center center" flex>
+    <md-virtual-repeat-container id="vertical-container" flex>
+      <div md-virtual-repeat="item in cc.messages" class="repeated-item" flex>
+        <strong> {{item.sender}} </strong> Says : {{item.text}} <span hide-xs>at {{item.timestamp}}</span>
+      </div>
+    </md-virtual-repeat-container>
+  </md-content>
+  <div class="md-padding" layout-padding>
     <form data-ng-submit="cc.sendMessage(cc.msg, cc.name)">
       <md-input-container class="md-icon-float md-block">
         <label>message</label>

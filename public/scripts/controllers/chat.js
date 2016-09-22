@@ -16,7 +16,7 @@
       const message = {
         sender:    sender || 'uname',
         text:      text,
-        timestamp: new Date().toUTCString() 
+        timestamp: Date.now() 
       };
 
       db.put(message)
