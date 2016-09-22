@@ -1,34 +1,26 @@
 (() => {
   'use strict';
 
-  angular.module('app').factory('db', pouchdb);
+  angular
+    .module('app')
+    .service('db', pouchdb);
 
-  pouchdb.$inject = ['$rootScope', '$q', '$window'];
+  pouchdb.$inject = ['$rootScope', '$q'];
 
-  function pouchdb($rootScope, $q, $window) {
+  function pouchdb($rootScope, $q) {
+
     const db = new PouchDB('chat');
-    const baseUrl = $window.location.origin;
-    const remote = `${baseUrl}/db/chat`;
 
-    const syncOptions = {
-      live  : true,
-      retry : true,
-      sync  : 'now'
-    };
+    this.getDB = getDB
+    this.getDBSync = getDBSync
+    this.put = put;
 
-    const service = {
-      put:   put,
-      getDb: getDb
-    };
+    function getDB () {
+      return $q.when(db);
+    }
 
-    return service;
-
-    function getDb () {
-
-      db.sync(remote, syncOptions)
-        .on('change', () => $rootScope.$emit('chat-sync')); 
-
-      return db;
+    function getDBSync () {
+      return db; 
     }
 
     function put(data) {

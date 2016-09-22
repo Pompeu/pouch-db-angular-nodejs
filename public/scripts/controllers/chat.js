@@ -8,7 +8,7 @@
   function chat ($rootScope, db, $scope, $q, $timeout) {
     const cc = this;
     cc.msg = '';
-    const localdb = db.getDb()
+    const localdb = db.getDBSync()
 
     init();
 
@@ -16,7 +16,7 @@
       const message = {
         sender:    sender || 'uname',
         text:      text,
-        timestamp: Date.now() 
+        timestamp: new Date().toUTCString() 
       };
 
       db.put(message)
@@ -37,6 +37,11 @@
 
     function toDocs (all) {
       return all.rows.map(row => row.doc)
+        .map(doc => ({
+          sender: doc.sender,
+          text: doc.text ,
+          timestamp: moment(doc.timestamp).format('h:mm:ss a')
+        }));
     }
 
     function sortByDate (docs) {
